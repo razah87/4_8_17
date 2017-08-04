@@ -1,0 +1,52 @@
+﻿using Pearl.DataAccessObjects;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Search : System.Web.UI.Page
+{
+    private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string dest = Session["destination_id"].ToString();
+        string tp = Session["type"].ToString();
+        string dad = Session["mon"].ToString();
+        string dur = Session["duration"].ToString();
+       
+        
+
+        rptTours.DataSource = GetSearchTours(dest, tp, dad, dur);
+        rptTours.DataBind();
+
+        //GridView1.DataSource = GetSearchTours("1", "4", "February", "2"); 
+        //GridView1.DataBind();
+       // GetSearchTours();
+    }
+
+    public DataTable GetSearchTours(string destination,string ty, string mon, string da)
+    {
+        SqlParameter[] param = new SqlParameter[] 
+        {
+         new SqlParameter("Destination_Id",destination),
+         new SqlParameter("Category_id",ty),
+         new SqlParameter("Month",mon),
+         new SqlParameter("Duration_day",da)
+        };
+        DataTable dt = dac.GetDataTable("Get_Data_by_selected_param", param);
+       return dt;
+
+        //foreach (DataRow row in dt.Rows)
+        //{
+        //    Label1.Text = row["Title"].ToString();
+        //    Label2.Text = row["Description"].ToString();
+        //    Label3.Text = row["Duration_day"].ToString();
+
+        //}
+    }
+}

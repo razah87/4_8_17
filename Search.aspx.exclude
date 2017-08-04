@@ -1,0 +1,54 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Search.aspx.cs" Inherits="Search" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     <asp:Repeater ID="rptTours" runat="server" >
+         <ItemTemplate>
+        
+             <div class="nstours">
+<div class="nstourstitlecontainer"><div class="title"><h2><%# DataBinder.Eval(Container.DataItem,"Title") %></h2></div><div class="daysnights"><span><%# DataBinder.Eval(Container.DataItem,"Duration_day") %></span>&<span><%# DataBinder.Eval(Container.DataItem,"Duration_night") %></span></div><div></div></div>
+<div class="nstourdescontainer">
+<div class="nstitleimage"><img src="<%# DataBinder.Eval(Container.DataItem,"Feature_image") %>" /></div>
+<div class="nstourdescrition">
+<p>Starting From:(Per Person)</p>
+<h4>Rs. <%# DataBinder.Eval(Container.DataItem,"Price") %></h4>
+<div class="nstourshotel">
+<p>Hotel included in package:</p>
+<span><%# DataBinder.Eval(Container.DataItem,"Hotel") %></span>
+</div>
+</div>
+</div>
+<div class="nstourbottom"><div class="nstourinclusion">
+<ul>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_1") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_2") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_3") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_4") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_5") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_6") %></li>
+    <li><%# DataBinder.Eval(Container.DataItem,"Included_7") %></li>
+
+</ul></div>
+<div class="nsbuttonconatiner">
+    <asp:Button ID="btnCustomise" runat="server" Text="CUSTOMISE & GET QUOTES" />
+     <asp:Button ID="btnDetials" runat="server" Text="View Details" />
+
+</div></div>
+</div>
+
+           </ItemTemplate>
+        </asp:Repeater>
+      
+    </div>
+       
+    </form>
+</body>
+</html>
