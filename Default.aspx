@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main_Master.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-hello world
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
  
      <script src="Scripts/slider/jssor.slider-22.2.10.min.js"></script>
@@ -11,7 +10,7 @@ hello world
                 $AutoPlay: true,
                 $AutoPlaySteps: 4,
                 $SlideDuration: 160,
-                $SlideWidth: 300,
+                $SlideWidth: 400,
                 $SlideSpacing: 4,
                 $Cols: 4,
                 $ArrowNavigatorOptions: {
@@ -97,7 +96,7 @@ hello world
                  $AutoPlay: true,
                  $AutoPlaySteps: 4,
                  $SlideDuration: 160,
-                 $SlideWidth: 275,
+                 $SlideWidth: 400,
                  $SlideSpacing: 4,
                  $Cols: 4,
                  $ArrowNavigatorOptions: {
@@ -140,7 +139,7 @@ hello world
                  $AutoPlay: true,
                  $AutoPlaySteps: 4,
                  $SlideDuration: 160,
-                 $SlideWidth: 275,
+                 $SlideWidth: 400,
                  $SlideSpacing: 4,
                  $Cols: 4,
                  $ArrowNavigatorOptions: {
