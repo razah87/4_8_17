@@ -2,8 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 hello world
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
-   <%-- hello worl--%>
-    
+<% // hello  %>    
      <script src="Scripts/slider/jssor.slider-22.2.10.min.js"></script>
     <script type="text/javascript">
         jssor_1_slider_init = function () {
