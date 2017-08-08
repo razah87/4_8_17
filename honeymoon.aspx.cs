@@ -14,6 +14,9 @@ using System.Web.UI.WebControls;
 public partial class honeymoon : System.Web.UI.Page
 {
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
+    int catogry_id = 0;
+   public  int op_id = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         string cat_id = "3";
@@ -246,7 +249,7 @@ public partial class honeymoon : System.Web.UI.Page
             banheader.Style.Add("background-image", "url(../"+idr["Profile_Image"].ToString()+")");
             lbldTitle.Text = idr["ds_Name"].ToString();
             lblContent.InnerText = idr["ds_Content"].ToString();
-
+            
         }
         dac.Connection.Close();
     
@@ -255,7 +258,7 @@ public partial class honeymoon : System.Web.UI.Page
     protected void rptTours_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         Session["tour_id"] = e.CommandArgument;
-        Response.Redirect("tour.aspx");
+        Response.Redirect("tour.aspx?id="+Session["tour_id"]+"&cat_id=3&op_id=1");
     }
 
     public DataTable Gettoursbycategory(string cat)

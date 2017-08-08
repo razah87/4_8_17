@@ -96,7 +96,7 @@
         
         <h2 style="background-color:#00686B;width:100%;padding:10px;text-align:center;margin:0;">Price Detail</h2>
         <h1 style="background-color:#EE4037;width:100%;padding:30px;text-align:center;margin:0;">Approx. Rs <asp:Label ID="lblTourPrice" runat="server" ></asp:Label> / <asp:Label ID="lblTourDays" runat="server" ></asp:Label> Days</h1>
-       
+       <div class="single_tour_inner">
              <div class="col-sm-6">
 <h3 style="background-color:#9F2520;width:100%;">PRICE INCLUDES</h3>
             <p style="padding-top:20px;"> <asp:Label ID="lblIncludes1" runat="server" ></asp:Label></p>
@@ -123,6 +123,7 @@
               <p> <asp:Label ID="lblNotIn9" runat="server" ></asp:Label></p>
               <p> <asp:Label ID="lblNotIn10" runat="server"></asp:Label></p>
         </div>
+           </div>
     </div>
     <div class="col-sm-12 single_tour_cont" >
         <h3 style="text-align:center;padding-top:30px;color:#000;">Itinerary not quite right for you?</h3>

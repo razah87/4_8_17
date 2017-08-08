@@ -126,7 +126,8 @@
     <div class="nsbuttonconatiner">
     <asp:Button ID="btnCustomise" runat="server" Text="CUSTOMISE & GET QUOTES" /> 
         <asp:LinkButton Text="View Details" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>' runat="server" />
-
+        
+     
 </div>
 </div>
 </div>

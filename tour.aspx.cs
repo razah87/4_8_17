@@ -14,17 +14,19 @@ public partial class tour : System.Web.UI.Page
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     protected void Page_Load(object sender, EventArgs e)
     {
-        string tour_id = Session["tour_id"].ToString();
-        Gettourbyid(tour_id);
+        
+            string ids = Request.QueryString["id"];
+            string tour_id = ids;
+            Gettourbyid(tour_id);
+            rptTour.DataSource = GetPlanbytourid(ids);
+            rptTour.DataBind();
+            string op = Request.QueryString["op_id"];
+            string ct = Request.QueryString["cat_id"];
+            GetOperator(op);
+            rptRTours.DataSource = Getrelativetour(op, ct);
+            rptRTours.DataBind();
+        
 
-        rptTour.DataSource=   GetPlanbytourid(tour_id);
-        rptTour.DataBind();
-
-        string op = Session["operator_id"].ToString();
-        string ct = Session["Cat_id"].ToString();
-        GetOperator(op);
-       rptRTours.DataSource= Getrelativetour(ct, op);
-       rptRTours.DataBind();
     }
 
     public void Gettourbyid(string t_id)
@@ -54,7 +56,7 @@ public partial class tour : System.Web.UI.Page
             lblDeparture_left_date.Text = idr["Tour_Date"].ToString();
             lblDeparturedate_sidebar.Text = idr["Tour_Date"].ToString();
             Session["operator_id"] = idr["o_id"];
-            Session["Cat_id"] = idr["Category_id"];
+            Session["Cat_id"] =      idr["Category_id"];
         }
         dac.Connection.Close();
         

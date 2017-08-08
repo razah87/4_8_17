@@ -18,7 +18,6 @@ public partial class family_tours : System.Web.UI.Page
     {
         string cat_id = "4";
         GetDestinationbyid(Convert.ToInt32(cat_id));
-
         SearchCustomers(txtContactsSearch2.Text);
         rptTours.DataSource = Gettoursbycategory(cat_id);
         rptTours.DataBind();
@@ -255,7 +254,8 @@ public partial class family_tours : System.Web.UI.Page
     protected void rptTours_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         Session["tour_id"] = e.CommandArgument;
-        Response.Redirect("http://localhost:49915/tour.aspx");
+        Response.Redirect("tour.aspx?id=" + Session["tour_id"] + "&cat_id=4&op_id=1");
+
     }
 
     public DataTable Gettoursbycategory(string cat)

@@ -35,12 +35,115 @@ public partial class _Default : System.Web.UI.Page
             ddlDuration.DataValueField = "dur_Id";
             ddlDuration.DataBind();
 
+            ///Getalldestination
+            ///
+           /* DataTable dt = GetTopDestination();
+
+            if (dt.Rows.Count > 0) {
+                DataTable dt_new = new DataTable();
+                DataColumn dc_image = new DataColumn("ImageUrl");
+                dt_new.Columns.Add(dc_image);
+                DataColumn dc_title = new DataColumn("title");
+
+                dt_new.Columns.Add(dc_title);
+                for (int i = 0; i < dt.Rows.Count; i++) {
+                  //  image_top.ImageUrl = dt.Rows[i]["Profile_Image"].ToString();
+
+                    DataRow dr = dt_new.NewRow();
+                    dr[0] = dt.Rows[i]["Profile_Image"].ToString();
+                    dr[1] = dt.Rows[i]["ds_Name"].ToString();
+            // you change your code as per need .
+                    dt_new.Rows.Add(dr);
+                
+                }
+                dtlist.DataSource = dt_new;
+                dtlisttop.DataSource = dt_new;
+                dtlist.DataBind();
+                dtlisttop.DataBind();
+            
+            }
+            */
+            ////////// Get All Event ////
+           // DataTable dt_event = GetAllTour();
+         //   slider_return(dt_event);
+            /*
+            DataTable dt_event = GetAllTour();
+
+            if (dt_event.Rows.Count > 0)
+            {
+                DataTable dt_new = new DataTable();
+                DataColumn dc_image = new DataColumn("ImageUrl1");
+                dt_new.Columns.Add(dc_image);
+                DataColumn dc_title = new DataColumn("title1");
+
+                dt_new.Columns.Add(dc_title);
+
+                DataColumn dc_price = new DataColumn("price");
+
+                dt_new.Columns.Add(dc_price);
+                for (int i = 0; i < dt_event.Rows.Count; i++)
+                {
+                    //  image_top.ImageUrl = dt.Rows[i]["Profile_Image"].ToString();
+
+                    DataRow dr = dt_new.NewRow();
+                    dr[0] = dt_event.Rows[i]["Feature_image"].ToString();
+                    dr[1] = dt_event.Rows[i]["Title"].ToString();
+                    dr[2] = dt_event.Rows[i]["Price"].ToString();
+
+                    dt_new.Rows.Add(dr);
+
+                }
+                slider_holyday.DataSource = dt_new;
+                slider_holyday.DataBind();
+
+            }
+ */
+            ////
+
+
            // Getalltours();
            
         }
         SearchCustomers(txtContactsSearch.Text);
-       
-       
+    }
+    public String top_destination() {
+         DataTable dt = GetTopDestination(); 
+         StringBuilder html = new StringBuilder();
+         for (int i = 0; i < dt.Rows.Count; i++)
+         {
+             html.Append("<div class='col-sm-3-f' style='padding-bottom:10px'><div class='des-thumbnail'> <img src='");
+             html.Append(dt.Rows[i]["Profile_Image"].ToString());
+             html.Append("' width='100%' height='274px'  /></div><div class='img-caption'><a href='");
+             html.Append("destination.aspx?id=");
+             html.Append(dt.Rows[i]["Id"].ToString());
+             html.Append("'><h3 class='text-center'>");
+             html.Append(dt.Rows[i]["ds_Name"].ToString());
+             html.Append("</h3></a></div></div>");
+         }
+        return html.ToString();
+    }
+    public String slider_return()
+    {
+        DataTable dt_event = GetAllTour();
+        StringBuilder html = new StringBuilder();
+        for (int i = 0; i < dt_event.Rows.Count; i++)
+        {
+            html.Append("<div  class='sld'>");
+            html.Append("<a href='");
+            html.Append("tour.aspx?id=" + dt_event.Rows[i]["Id"].ToString() + "&cat_id=" + dt_event.Rows[i]["Category_id"].ToString() + "&op_id=" + dt_event.Rows[i]["o_id"].ToString());
+            html.Append("'><img src='");
+            
+            html.Append(dt_event.Rows[i]["Feature_image"].ToString());
+            html.Append("' width='400px !important'/></a>");
+            html.Append("<div class='event-title'>");
+            html.Append("<span class='ns_title'><a href='");
+            html.Append("tour.aspx?id=" + dt_event.Rows[i]["Id"].ToString() + "&cat_id=" + dt_event.Rows[i]["Category_id"].ToString() + "&op_id=" + dt_event.Rows[i]["o_id"].ToString() + "'>");
+            html.Append(dt_event.Rows[i]["Title"].ToString());
+            html.Append("</a></span><span class='price'>");
+            html.Append("RS " + dt_event.Rows[i]["Price"].ToString());
+            html.Append("</span></div></div>");
+        }
+        return html.ToString();
     }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
@@ -98,7 +201,11 @@ public partial class _Default : System.Web.UI.Page
 
         return sb.ToString();
     }
-
+    public DataTable GetAllTour()
+    {
+        DataTable dt = dac.GetDataTable("Get_alltours");
+        return dt;
+    }
     //public List<string> Searchautocomp(string TextBox1)
     //{
 
@@ -126,6 +233,13 @@ public partial class _Default : System.Web.UI.Page
         DataTable dt = dac.GetDataTable("Select_Destination");
         return dt;
                    
+    }
+    public DataTable GetTopDestination()
+    {
+
+        DataTable dt = dac.GetDataTable("GetTopDestination");
+        return dt;
+
     }
 
     public DataTable GetCategories()

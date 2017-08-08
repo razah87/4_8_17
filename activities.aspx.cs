@@ -1,4 +1,4 @@
-﻿using Pearl.DataAccessObjects;
+using Pearl.DataAccessObjects;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -10,10 +10,11 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 public partial class activities : System.Web.UI.Page
 {
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
+    int cat_id=0;
+    int op_id=0;
     protected void Page_Load(object sender, EventArgs e)
     {
         //string des_id = Session["des_id"].ToString();
@@ -254,8 +255,21 @@ public partial class activities : System.Web.UI.Page
 
     protected void rptTours_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
+        
         Session["tour_id"] = e.CommandArgument;
-        Response.Redirect("~/tour.aspx");
+        SqlParameter[] param = new SqlParameter[] 
+        {
+        
+         new SqlParameter("Id", Session["tour_id"])
+        };
+
+        DataTable dt = dac.GetDataTable("Select_event_by_id", param);
+        cat_id =    Convert.ToInt32(dt.Rows[0]["Category_id"]);
+        op_id  = Convert.ToInt32(dt.Rows[0]["o_id"]);
+
+        dac.Connection.Close();
+        Response.Redirect("tour.aspx?id=" + Session["tour_id"] + "&cat_id=" + cat_id + "&op_id=" + op_id);
+
     }
 
     public DataTable Gettoursbydestination(string destination)

@@ -16,12 +16,20 @@ public partial class destination : System.Web.UI.Page
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     protected void Page_Load(object sender, EventArgs e)
     {
-        string des_id = Session["des_id"].ToString();
-        GetDestinationbyid(Convert.ToInt32(des_id));
+        string ids = Request.QueryString["id"];
 
-        SearchCustomers(txtContactsSearch2.Text);
-        rptTours.DataSource = Gettoursbydestination(des_id);
-        rptTours.DataBind();
+
+          
+
+            string des_id = ids;
+            GetDestinationbyid(Convert.ToInt32(des_id));
+
+            SearchCustomers(txtContactsSearch2.Text);
+            rptTours.DataSource = Gettoursbydestination(des_id);
+            rptTours.DataBind();
+        
+        
+       
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)
@@ -32,7 +40,7 @@ public partial class destination : System.Web.UI.Page
 
         Session["mon"] = ddlMonth.SelectedItem.Value;
 
-        string des = Session["destination_id"].ToString();
+        string des = Request.QueryString["id"];
         string da = "";
         if (ddlMonth.SelectedItem.ToString() != "Month of Travel")
         {
