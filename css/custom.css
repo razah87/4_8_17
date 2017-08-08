@@ -1,0 +1,688 @@
+﻿body {
+}
+
+/* Popup */
+
+.modalPopup{
+    background:#fff;
+    border:2px solid #40c1b9;
+    text-align:left;
+}
+.customquots h2{color:#40c1b9!important;}
+.rightbg {
+background:#40c1b9;
+margin-top: -33px;
+margin-left: -16px;
+color:#fff!important;
+padding:16%;
+}
+.req-from-cont_bottom {
+    padding-top: 18%;
+    text-align: center;
+}
+.req-from-cont {
+    padding-left: 30px;
+  
+}
+.modalBackground{background: rgba(0, 0, 0, 0.8);}
+
+.initial-info {
+    width:50%;
+    margin:auto;
+}
+.initial-info h2,.initial-info h3,.initial-info h1{COLOR:#000!IMPORTANT;margin-top:50px!important;}
+.initial-info-top {
+    width:50%;
+    margin:auto;
+    padding-top:40px;
+    margin-bottom:0px;
+    border-bottom:1px solid;
+}
+
+.nsDestination {
+display:block;
+float:left;
+}
+
+.customquots input{width:100%;height:40px;border:1px solid #EF3E36;}
+.leftbox {
+width:49%;
+float:left;margin-right:1%;}
+.rightbox{width:49%;float:left;margin-left:1%;}
+
+.msg-box label {
+color:red!important;
+border:1px solid!important;
+font-weight:bold!important;
+}
+
+.login{min-height:550px;}
+.input-width {
+width:49%!important;
+float:left;
+}
+.input-width-lft {
+margin-left:1%;
+}
+
+
+.initial-info input, .initial-info textarea{
+    width:100%;
+    float:left;
+    height:40px;
+    border:1px solid #f35f55;
+   
+}
+
+.messagebox{color:red;border:1px solid red;}
+.initial-info select{
+    width:100%;
+    float:left;
+    height:40px;
+     border:1px solid #f35f55;
+}
+.initial-info span {
+   padding-top:10px;
+   width:100%;
+   float:left;
+}
+.nstourdescontainer, .nstourbottom {
+width:100%;
+clear:both;
+margin:20px 0;
+}
+
+.nstourstitlecontainer{
+width:100%;
+clear:both;
+}
+.sub-proper{margin-bottom:50px!important}
+.nstours{    background-color: rgba(64, 193, 185, 0.21);}
+
+.title h2{font-size:16px;
+          color: #fff;
+    padding: 12px 6px;
+    background: #40c1b9;
+    margin:0;
+}
+.nstitleimage{
+    width:38.4%;
+    float:left;
+    
+}
+.single_tour_inner{background-color:rgb(204, 204, 204);min-height:340px;}
+
+.nsbuttonconatiner {
+    width:100%;
+    float:left;
+     margin-top:10px;
+     border-top: 1px solid #40c1b9;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid #40c1b9;
+}
+
+.nsbuttonconatiner input{ background: #EF3E36;border:0;color:#fff;    padding: 5px 23px;}
+.nsbuttonconatiner a{ background: #EF3E36;border:0;color:#fff;    padding: 10px 23px;}
+
+.daysnights {
+float: left;
+    width: 22%;
+    background: #f35f55;
+    text-align: center;
+    color: #fff;
+    padding: 20px 10px;
+    border-radius: 0px 0px 0px 32px;
+}
+
+.daysnights h4{
+    color:#fff!important;
+}
+.title {
+float:left;
+width:78%;
+}
+.nstourinclusion,
+.nstourdescrition {
+    width:61.6%;
+    float:left;
+}
+
+.nstourshotel {
+padding-left:10px;
+    min-height: 200px;
+}
+.nstourinclusion ul{width:100%;
+}
+.nstourinclusion ul{width:12%;float:left;list-style-type:none;
+}
+
+.ns-msg-box {
+color:green;
+text-align:center;
+}
+.ns_tour_id {
+    float:left;
+    width:5%;
+    padding:1px 10px;
+    border:1px solid gray;
+}
+.ns_tour_title {
+       float:left;
+       width:70%;
+    padding:1px 10px;
+    border:1px solid gray;
+}
+.ns_button {
+       float:left;
+       width:20%;
+       border:1px solid gray;
+    padding:1px 10px;
+}
+.top-box {
+text-align:center;
+padding:40px 0 0 0;
+}
+.top-box h5 {
+     margin: 12px 0 5px 0;
+     font-weight:600;
+     }
+.top-box p {
+     font-size:13px;
+     color:#000;
+     }
+
+@media (min-width: 1200px){
+    .container {
+        margin:auto;
+        clear:both;
+        width: 1170px;
+    }
+}
+
+.destinatin-cont .col-sm-3-f {
+    width: 24.4%;
+    float:left;
+    margin: 3px;
+}
+.destinatin-cont col-sm-3-l {
+
+}
+.price{
+    float: right;
+    background-image:url('../images/thumbnails/ns_title_price.jpg');
+    background-repeat:no-repeat;
+    color: #fff;
+    padding: 6px 4px 6px 23px;
+
+}
+.ns_title{padding-top: 5px;
+    float: left;
+    padding-left: 4px;}
+
+.ns_hom_slides {
+width:100%!important;
+cursor:default;position:relative;top:0px;left:0px;overflow:hidden;
+}
+    .ns_hom_slides  .sld {
+    
+    height: 279px!important;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    }
+    .ns_hom_slides  .sld img{
+    
+   
+    height:240px!important;
+    }
+
+  /* jssor slider bullet navigator skin 03 css */
+        /*
+        .jssorb03 div           (normal)
+        .jssorb03 div:hover     (normal mouseover)
+        .jssorb03 .av           (active)
+        .jssorb03 .av:hover     (active mouseover)
+        .jssorb03 .dn           (mousedown)
+        */
+        .jssorb03 {
+            position: absolute;
+        }
+        .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 21px;
+            height: 21px;
+            text-align: center;
+            line-height: 21px;
+            color: white;
+            font-size: 12px;
+            background: url('images/b03.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb03 div { background-position: -5px -4px; }
+        .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+        .jssorb03 .av { background-position: -65px -4px; }
+        .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+
+        /* jssor slider arrow navigator skin 03 css */
+        /*
+        .jssora03l                  (normal)
+        .jssora03r                  (normal)
+        .jssora03l:hover            (normal mouseover)
+        .jssora03r:hover            (normal mouseover)
+        .jssora03l.jssora03ldn      (mousedown)
+        .jssora03r.jssora03rdn      (mousedown)
+        .jssora03l.jssora03ldn      (disabled)
+        .jssora03r.jssora03rdn      (disabled)
+        */
+        .jssora03l, .jssora03r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+            background: url('../images/a03.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora03l { background-position: -3px -33px; }
+        .jssora03r { background-position: -63px -33px; }
+        .jssora03l:hover { background-position: -123px -33px; }
+        .jssora03r:hover { background-position: -183px -33px; }
+        .jssora03l.jssora03ldn { background-position: -243px -33px; }
+        .jssora03r.jssora03rdn { background-position: -303px -33px; }
+        .jssora03l.jssora03lds { background-position: -3px -33px; opacity: .3; pointer-events: none; }
+        .jssora03r.jssora03rds { background-position: -63px -33px; opacity: .3; pointer-events: none; }
+
+.heading {
+text-align:center;
+background-color:#EF3E36;
+color:#fff!important;
+margin-bottom: 20px;
+padding-bottom: 5px;
+}
+.heading p {
+    padding-bottom:4px;
+    }    
+.heading H1 {
+    color:#FFF!IMPORTANT;
+    font-size: 30px;
+    margin: 12px 0 0px 0;
+    padding-top:4px;
+    }
+@media (min-width: 1200px) {
+    .container {
+        width: 88%!important;
+    }
+}
+
+/* background video*/
+video { 
+   /*position: fixed;*/
+top: 60%;
+/*left: 50%;*/
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -1;
+/*transform: translateX(-50%) translateY(-50%);*/
+/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+background-size: cover;
+transition: 1s opacity;
+clear: both;
+}
+
+.event-title {
+width:100%;
+}
+
+.des-thumbnail {
+}
+.img-caption {
+margin-top: -36px;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 21.5%;
+   
+}
+.img-caption h3{ 
+    color: #fff!important;
+    font-size: 18px;
+    text-align: center;
+}
+
+.ftr-top-cta{
+    background-color:#383838;
+    padding:40px;
+
+}
+    .ftr-top-cta p {
+    color:#fff;
+    margin-bottom: 0;
+    line-height: 20px;
+    margin-top: 15px;
+    }
+ .ftr-top-cta a{
+        background: #EF3E36;
+    color: #fff;
+    }
+
+.video-section .pattern-overlay {
+/*background-color: rgba(71, 71, 71, 0.59);
+padding: 110px 0 32px;
+min-height: 496px; 
+ Incase of overlay problems just increase the min-height*/
+}
+.video-section h1, .video-section h3{
+text-align:center;
+color:#fff;
+}
+.video-section h1{
+font-size:110px;
+font-family: 'Buenard', serif;
+font-weight:bold;
+text-transform: uppercase;
+margin: 40px auto 0px;
+text-shadow: 1px 1px 1px #000;
+-webkit-text-shadow: 1px 1px 1px #000;
+-moz-text-shadow: 1px 1px 1px #000;
+}
+.video-section h3{
+font-size: 25px;
+font-weight:lighter;
+margin: 0px auto 15px;
+}
+.video-section .buttonBar{display:none;}
+.player {font-size: 1px;}
+footer{
+    background-color:#242625;
+    padding-top: 35px;
+    padding-bottom: 0px;
+    color:#fff;
+    clear:both;
+}
+    footer p {
+        font-size: 12px;
+    }
+   footer h4 {
+    color:#fff;    font-size: 13px;}
+   footer ul{
+       list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+   }
+    footer ul li a {
+    font-size:13px;
+    }
+
+.btn-subs{
+    width: 30%;
+    height: 50px;
+    margin-left: -5px;
+     background: #EF3E36;
+     color:#fff;
+         border: 0px;
+}
+.destinatin-top-cont{border-bottom:1px solid #40c1b9;}
+.destinatin-top-cont p{margin-bottom:10px!important;}
+.sidebar {
+    border:1px solid #40c1b9;
+    margin:0px 0;
+    border-radius: 10px 10px 1px 1px;
+    background-color: rgba(64, 193, 185, 0.21);
+    padding-bottom: 30px;
+}
+.sidebar h3{
+    border-radius: 10px 10px 1px 1px;
+    background: #40c1b9;
+    color: #fff;
+    margin: 0 -15px;
+    padding: 15px;
+}
+.sub-page {
+width:60%;
+margin:auto;
+}
+.sub-page .searchcontrols{width:33.33%!important;}
+.sub-page .searchrow{padding-top:10px!important;}
+hr {
+border:1px solid #f35f55!important;
+}
+.search-btn{ background: #EF3E36;border:none;color:#fff;}
+.fh5co-nav {
+    border-bottom: 1px solid #f35f55;
+}
+.single_tour{color:#000;margin-top:150px;}
+.single_tour span{color:#000;}
+.tour-top-content span{color:#000;font-size:15px;padding-bottom:50px;}
+.tour-top-content{padding-bottom:10px;}
+.days-tabs h3 span{font-size:15px;font-weight:700;}
+.days-tabs h3{padding:0px 0 15px 0;}
+.days-tabs ul {
+list-style-type:none;
+width:100%;
+clear:both;
+float:left;
+min-height:48px;
+}
+    .days-tabs ul li {float:left;padding:5px 20px;background-color:#00686B;margin-left:10px;  color:#fff;  
+}
+span{font-size:16px;}
+
+.feature-img img{float:left;}
+.content-title{
+    float:left;width:100%;
+    background: rgba(0, 0, 0, 0.55);
+    margin-top: -42px;
+    padding-left: 10px;
+
+}
+
+.content-title h2 span{color:#fff;font-size: 17px;
+    font-weight: bold;}
+    .content-title h2 {
+    margin:0px;
+    padding-bottom: 8px;
+    }
+
+.pre-title {
+background-color:#EF3E36;
+color:#fff!important;
+padding:7px 49px;
+font-size:20px;
+}
+.after-title{
+    padding:6px 49px;
+background-color:#40c1b9;
+color:#fff!important;
+font-size:20px;
+}
+.firstday, .days-tabs {
+    width: 100%;
+    clear: both;
+}
+.content-title{
+
+   
+}
+.right-sidebar{float:left;padding:5px 10px;background-color:#40c1b9;min-height:450px!important;}
+.fh5co-nav .container{width:73%!important;}
+.outerwrap
+{width:80%;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:129px;
+ margin-bottom:50px;
+ height:auto;
+ border-left:1px solid rgba(204, 204, 204, 0.92);
+ border-right:1px solid rgba(204, 204, 204, 0.92);
+}
+.operator-img{margin-top: 0px;width:100px;height:100px;float:left; clear:both;}
+.operator-img img{
+   border-radius: 50%;
+   padding:4px;
+    float: left;
+    position: relative;
+    width:100px;
+}
+.o-title{padding: 40px 145px;}
+.o-title span{color:#fff;}
+.o-title h5 span{font-size:20px;font-weight:bold;}
+.cover-top{margin-bottom:40px;}
+.traveller-reviews h3{background:#EF3E36;color:#fff;text-align:center;padding:10px;}
+.traveller-reviews,.txt-area{padding:0 20px;}
+.trcontent {
+   min-height: 150px;
+    background: rgba(204, 204, 204, 0.92);
+}
+.tour-thumnail{width:25%;float:left;}
+.first-day-content {
+    float: left;
+    width: 75%;
+    /* margin-left: 1%; */
+    border-bottom: 3px solid rgba(119, 119, 119, 0.69);
+    border-left: 1px solid rgba(119, 119, 119, 0.63);
+    border-right: 1px solid rgba(128, 128, 128, 0.66);
+    padding: 10px 10px;
+    box-shadow: 0px 3px 1px 0px rgba(136, 136, 136, 0.45);
+}
+
+.cont-title h4{background-color: gray;
+               text-align: center;
+    width: 34%;
+   margin: 20px auto;
+    padding: 10px;
+    color: #fff;
+}
+.operator-con {
+
+padding-top:15px;}
+
+.operator-con span{font-size:16px;color:#fff;}
+.sidebar_departure_date {
+background:#fff;
+padding: 0px 18px;
+    width: 74%;
+    margin: auto;
+}
+.sidebar_departure_booknow {
+width:80%;
+margin:auto;
+}
+
+.sidebar_departure_booknow input{
+    background: #EE4037;
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    padding: 5px 53px;
+    width: 100%;
+}
+/******************Destination*******************/
+
+@media (max-width: 767px) {
+   .img-caption,.destinatin-cont .col-sm-3-f, .col-sm-3-f {
+        width: 100% !important;
+    }
+
+   .fh5co-cover .display-tc h2 {
+    font-size: 14px!important;
+    line-height: 17px!important;
+    margin-bottom: 9px!important;
+}
+
+   .fh5co-cover .display-tc h1 {
+    font-size: 19px!important;
+    padding-top: 152px!important;
+}
+
+    .searchrow {
+        padding-bottom: 26px !important;
+    }
+    .searchcontrols {
+        width: 100%!important;
+    }
+}
+
+
+.firstday h3 {
+    padding: 4px 0px;
+    background-color: #40c1b9;
+    width:100%;
+    margin:0;
+}
+.imgdescontainer{float:left;}
+.destitleon{
+    margin-top: -42px;
+    background: rgba(0, 0, 0, 0.46);
+    float: left;
+    width: 100%;
+    text-align: center;
+        margin-bottom: 30px;
+}
+
+    .destitleon h3 {
+            margin: 6px 0 10px 0;
+    color:#fff;
+    }
+.display-tc h1 span{font-size:40px}
+.tourplan{
+        position: relative;
+    float: left;
+    margin-bottom: 28px;
+}
+.single_tour_cont .col-sm-6 {
+    padding-left: 0;
+    padding-right: 0;
+    background: rgb(204, 204, 204);
+}
+
+.ppackage{ background: rgb(204, 204, 204);
+}
+ .single_tour_cont .col-sm-6 p{ padding:0px 20px;}
+    .single_tour_cont .col-sm-6 h3 {
+    margin:0px;
+    padding:10px;
+    text-align:center;
+    }
+.single_tour_cont h1 span{font-size:36px;color:#fff;}
+.sidebarbutton{background:#00686B;
+               border: none;
+    padding: 5px 9px;
+    margin: 20px auto;
+    
+    color: #fff;
+}
+.right-bar-btn {
+
+}
+.opt img{border-radius:50%;width:99px;}
+.t-content .col-sm-4{background-color: #40c1b9;padding:0!important;}
+.t-content{height: 140px;
+    background: #40c1b9;
+    padding: 5px;}
+.t-content span{color:#fff;}
+
+.t-content h2 span{
+    color:#fff;
+    font-size: 25px;
+    font-weight: 500;
+}
+    .related-tour h2 {font-size:20px;}
+
+.video-section {
+/*background-image:url('../images/Slide _a.jpg')!important;
+background-repeat:no-repeat;*/
+}
+
+.left_date {
+    background: #EE4037;
+    color: #fff;
+    width: 258px;
+    margin: 20px auto;
+    padding: 5px 28px;
+
+}
+.left_date span {color:#fff;
+}

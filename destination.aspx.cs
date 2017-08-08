@@ -164,49 +164,25 @@ public partial class destination : System.Web.UI.Page
     }
 
 
-    protected void rblRating_SelectedIndexChanged(object sender, EventArgs e)
+    protected void rblDuration_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (rblRating.SelectedValue == "5 Stars")
-        {
-            int star = 5;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "4 Stars")
-        {
-            int star = 4;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "3 Stars")
-        {
-            int star = 3;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "2 Stars")
-        {
-            int star = 2;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
 
-        else if (rblRating.SelectedValue == "1 Star")
+        if (Convert.ToInt32(rblDuration.SelectedValue) < 12)
         {
-            int star = 1;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", Convert.ToInt32(rblDuration.SelectedValue)) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
             rptTours.DataSource = dt;
             rptTours.DataBind();
         }
+        else
+        {
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", 12) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        
     }
     protected void rblCategories_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -262,8 +238,20 @@ public partial class destination : System.Web.UI.Page
 
     protected void rptTours_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
-        Session["tour_id"] = e.CommandArgument;
-        Response.Redirect("http://localhost:49915/tour.aspx");
+        int tour_id = Convert.ToInt32(e.CommandArgument);
+        SqlParameter[] param = new SqlParameter[] 
+        {
+        
+         new SqlParameter("Id", tour_id)
+        };
+
+        DataTable dt = dac.GetDataTable("Select_event_by_id", param);
+
+        int op_id = Convert.ToInt32(dt.Rows[0]["o_id"]);
+        int cat_id = Convert.ToInt32(dt.Rows[0]["Category_id"]);
+        dac.Connection.Close();
+
+        Response.Redirect("tour.aspx?id=" + tour_id + "&cat_id=" + cat_id + "&op_id=" + op_id);
     }
 
     public DataTable Gettoursbydestination(string destination)
@@ -277,6 +265,13 @@ public partial class destination : System.Web.UI.Page
 
         DataTable dt = dac.GetDataTable("Get_Data_by_destination", param);
         dac.Connection.Close();
+        return dt;
+
+    }
+    public DataTable GetDuration()
+    {
+
+        DataTable dt = dac.GetDataTable("Get_duration_fil");
         return dt;
 
     }

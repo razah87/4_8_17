@@ -23,7 +23,7 @@ public partial class tour : System.Web.UI.Page
             string op = Request.QueryString["op_id"];
             string ct = Request.QueryString["cat_id"];
             GetOperator(op);
-            rptRTours.DataSource = Getrelativetour(op, ct);
+            rptRTours.DataSource = Getrelativetour(ct,op);
             rptRTours.DataBind();
         
 

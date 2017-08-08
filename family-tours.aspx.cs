@@ -21,6 +21,17 @@ public partial class family_tours : System.Web.UI.Page
         SearchCustomers(txtContactsSearch2.Text);
         rptTours.DataSource = Gettoursbycategory(cat_id);
         rptTours.DataBind();
+        if (!IsPostBack)
+        {
+            rblCategories.DataSource = GetCategories();
+            rblCategories.DataTextField = "cat_Title";
+            rblCategories.DataValueField = "cat_Id";
+            rblCategories.DataBind();
+            rblDuration.DataSource = GetDuration();
+            rblDuration.DataTextField = "Duration";
+            rblDuration.DataValueField = "dur_id";
+            rblDuration.DataBind();
+        }
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)
@@ -155,49 +166,25 @@ public partial class family_tours : System.Web.UI.Page
     }
 
 
-    protected void rblRating_SelectedIndexChanged(object sender, EventArgs e)
+    protected void rblDuration_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (rblRating.SelectedValue == "5 Stars")
+
+        if (Convert.ToInt32(rblDuration.SelectedValue) < 12)
         {
-            int star = 5;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            int d = Convert.ToInt32(rblDuration.SelectedValue) - 1;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", d) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
             rptTours.DataSource = dt;
             rptTours.DataBind();
         }
-        else if (rblRating.SelectedValue == "4 Stars")
+        else
         {
-            int star = 4;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "3 Stars")
-        {
-            int star = 3;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "2 Stars")
-        {
-            int star = 2;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", 12) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
             rptTours.DataSource = dt;
             rptTours.DataBind();
         }
 
-        else if (rblRating.SelectedValue == "1 Star")
-        {
-            int star = 1;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
     }
     protected void rblCategories_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -243,8 +230,8 @@ public partial class family_tours : System.Web.UI.Page
         if (idr.Read())
         {
             banheader.Style.Add("background-image", "url(../"+idr["Profile_Image"].ToString()+")");
-            lbldTitle.Text = idr["ds_Name"].ToString();
-            lblContent.InnerText = idr["ds_Content"].ToString();
+            //lbldTitle.Text = idr["ds_Name"].ToString();
+            //lblContent.InnerText = idr["ds_Content"].ToString();
 
         }
         dac.Connection.Close();
@@ -269,6 +256,13 @@ public partial class family_tours : System.Web.UI.Page
 
         DataTable dt = dac.GetDataTable("Get_tours_by_cat", param);
         dac.Connection.Close();
+        return dt;
+
+    }
+    public DataTable GetDuration()
+    {
+
+        DataTable dt = dac.GetDataTable("Get_duration_fil");
         return dt;
 
     }

@@ -15,14 +15,25 @@ public partial class activities : System.Web.UI.Page
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     int cat_id=0;
     int op_id=0;
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         //string des_id = Session["des_id"].ToString();
         //GetDestinationbyid(Convert.ToInt32(des_id));
-
-        SearchCustomers(txtContactsSearch2.Text);
-        rptTours.DataSource = Getalltours();
-        rptTours.DataBind();
+        if (!IsPostBack)
+        {
+            SearchCustomers(txtContactsSearch2.Text);
+            rptTours.DataSource = Getalltours();
+            rptTours.DataBind();
+            rblCategories.DataSource = GetCategories();
+            rblCategories.DataTextField = "cat_Title";
+            rblCategories.DataValueField = "cat_Id";
+            rblCategories.DataBind();
+            rblDuration.DataSource = GetDuration();
+            rblDuration.DataTextField = "Duration";
+            rblDuration.DataValueField = "dur_id";
+            rblDuration.DataBind();
+        }
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)
@@ -157,49 +168,63 @@ public partial class activities : System.Web.UI.Page
     }
 
 
-    protected void rblRating_SelectedIndexChanged(object sender, EventArgs e)
+    protected void rblDuration_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (rblRating.SelectedValue == "5 Stars")
-        {
-            int star = 5;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "4 Stars")
-        {
-            int star = 4;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "3 Stars")
-        {
-            int star = 3;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
-        else if (rblRating.SelectedValue == "2 Stars")
-        {
-            int star = 2;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
-            rptTours.DataSource = dt;
-            rptTours.DataBind();
-        }
 
-        else if (rblRating.SelectedValue == "1 Star")
+        if (Convert.ToInt32(rblDuration.SelectedValue)< 12)
         {
-            int star = 1;
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
-            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            int d = Convert.ToInt32(rblDuration.SelectedValue) - 1;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", d)};
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
             rptTours.DataSource = dt;
             rptTours.DataBind();
         }
+        else
+        {
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Duration_day", 12) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_duration", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        //    int star = 5;
+        //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+        //    DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+        //    rptTours.DataSource = dt;
+        //    rptTours.DataBind();
+        //}
+        //else if (rblRating.SelectedValue == "4")
+        //{
+        //    int star = 4;
+        //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+        //    DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+        //    rptTours.DataSource = dt;
+        //    rptTours.DataBind();
+        //}
+        //else if (rblRating.SelectedValue == "3")
+        //{
+        //    int star = 3;
+        //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+        //    DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+        //    rptTours.DataSource = dt;
+        //    rptTours.DataBind();
+        //}
+        //else if (rblRating.SelectedValue == "2")
+        //{
+        //    int star = 2;
+        //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+        //    DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+        //    rptTours.DataSource = dt;
+        //    rptTours.DataBind();
+        //}
+
+        //else if (rblRating.SelectedValue == "1")
+        //{
+        //    int star = 1;
+        //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+        //    DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+        //    rptTours.DataSource = dt;
+        //    rptTours.DataBind();
+        //}
     }
     protected void rblCategories_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -246,7 +271,7 @@ public partial class activities : System.Web.UI.Page
         {
             banheader.Style.Add("background-image", "url(../"+idr["Profile_Image"].ToString()+")");
             lbldTitle.Text = idr["ds_Name"].ToString();
-            lblContent.InnerText = idr["ds_Content"].ToString();
+           // lblContent.InnerText = idr["ds_Content"].ToString();
 
         }
         dac.Connection.Close();
@@ -290,6 +315,14 @@ public partial class activities : System.Web.UI.Page
     public DataTable Getalltours()
     {
         DataTable dt = dac.GetDataTable("Get_alltours");
+        return dt;
+
+    }
+
+    public DataTable GetDuration()
+    {
+
+        DataTable dt = dac.GetDataTable("Get_duration_fil");
         return dt;
 
     }

@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 
 public partial class operator_profile : System.Web.UI.Page
 {
+
     public IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,50 +26,8 @@ public partial class operator_profile : System.Web.UI.Page
         if (Session["role"].ToString() != "subscribers") { trallerreviews.Visible = true; }
         string u = Session["userid"].ToString();
         GetOperator(u);
-
-    //    if (CheckEmailExist(u) != 0)
-      //  {
-            SqlParameter[] param = new SqlParameter[] 
-        {
-          new SqlParameter("Id",u),
-          
-        };
-            dac.Connection.Close();
-            DataTable dt = dac.GetDataTable("updateinfocompny", param);
-            if (dt.Rows.Count > 0)
-            {
-                txtUsername.Text = dt.Rows[0]["O_Name"].ToString();
-                txtUserEmail.Text = dt.Rows[0]["O_Email"].ToString();
-                ConstanValue.prev_password = dt.Rows[0]["O_Password"].ToString();
-            }
-            else {
-                err_message.Text = u;
-            
-            }
-            dac.Connection.Close();
-        //}
-       // else {
-        
-         ////// label here 
-        //}
-        
     }
- /*   public int CheckEmailExist(String email) {
-        SqlParameter[] param = new SqlParameter[] 
-        {
-          new SqlParameter("O_Email",email),
-          
-        };
-        DataTable dt = dac.GetDataTable("Validatenewuser",param);
-        if (dt.Rows.Count > 0)
-        {
-            return 0;
-        }
-        else 
-        {
-            return 1;
-        }
-    }*/
+
     public void GetOperator(string o_id)
 
     {
@@ -85,22 +44,6 @@ public partial class operator_profile : System.Web.UI.Page
 
 
         }
-        
-    }
-    protected void btnRegister_Click(object sender, EventArgs e)
-    {
-        if (ConstanValue.prev_password == txtRPassword.Text)
-        {
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("O_Email", txtUserEmail.Text),
-            new SqlParameter("O_Name",txtUsername.Text),
-            new SqlParameter("O_Password",txtRCPassword.Text),
-            new SqlParameter("O_id",Session["userid"].ToString())
-        };
-            IDataReader idr = dac.ExecuteDataReader("Updatealluserinfo", param);
-        }
-        else {
 
-            err_message.Text = "Password not match"; 
-        }
     }
 }

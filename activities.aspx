@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-      <header  class=" head-banner banner-search-top" runat="server"  id="banheader" role="banner" style="margin-top: 135px;background-repeat: no-repeat;
-    padding-top:41px;padding-bottom: 67px;margin-bottom:30px;">
+      <header  class=" head-banner banner-search-top" runat="server"   id="banheader" role="banner" style="margin-top: 135px;background-repeat: no-repeat;
+    padding-top:41px;padding-bottom: 67px;margin-bottom:30px;background-image: url(../Uploadedfiles/Destination/destination-banner.jpg);">
                                             
 		<div class="overlay"></div>
 		<div class="container">
@@ -87,19 +87,23 @@
             </div>
              <hr />
               <div class="left-side-block">
-                <h4>Rating</h4>
-                   <asp:RadioButtonList ID="rblRating" runat="server" OnSelectedIndexChanged="rblRating_SelectedIndexChanged" ViewStateMode="Enabled"  AutoPostBack="true">
-                    <asp:ListItem>5 Stars</asp:ListItem>
-                    <asp:ListItem>4 Stars</asp:ListItem>
-                    <asp:ListItem>3 Stars</asp:ListItem>
-                    <asp:ListItem>2 Stars</asp:ListItem>
-                    <asp:ListItem>1 Star</asp:ListItem>
+                <h4>Duration</h4>
+                   <asp:RadioButtonList ID="rblDuration" runat="server" OnSelectedIndexChanged="rblDuration_SelectedIndexChanged" ViewStateMode="Enabled"  AutoPostBack="true">
+                   <%-- <asp:ListItem>1 Day</asp:ListItem>
+                     <asp:ListItem>2 Days</asp:ListItem>
+                       <asp:ListItem>3 Days</asp:ListItem>
+                       <asp:ListItem>4 Days</asp:ListItem>
+                       <asp:ListItem>Above 5 Days</asp:ListItem>--%>
+                    
+                    
+                    
+                    
                 </asp:RadioButtonList>
                   </div>
       
            </div>
         <div class="col-sm-9">
-            <p> <label id="lblContent" runat="server" ></label></p>
+           <%-- <p> <label id="lblContent" runat="server" ></label></p>--%>
     <label id="lblmessage" runat="server" title="No records are available" visible="false"></label>
      <asp:Repeater ID="rptTours" runat="server" OnItemCommand="rptTours_ItemCommand" >
          <ItemTemplate>

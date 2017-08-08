@@ -1,0 +1,116 @@
+﻿using Pearl.DataAccessObjects;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Usercontrol_filtercontrol : System.Web.UI.UserControl
+{
+    private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
+    int cat_id = 0;
+    int op_id = 0;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        rblCategories.DataSource = GetCategories();
+        rblCategories.DataTextField = "cat_Title";
+        rblCategories.DataValueField = "cat_Id";
+        rblCategories.DataBind();
+    }
+
+    public DataTable GetCategories()
+    {
+
+        DataTable dt = dac.GetDataTable("Select_Categories");
+        return dt;
+
+    }
+
+    protected void rblPrice_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (rblPrice.SelectedValue == "10000 to 30000")
+        {
+            int min_p = 10000;
+            int max_p = 30000;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("minprice", min_p), new SqlParameter("maxprice", max_p) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_price", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        else if (rblPrice.SelectedValue == "31000 to 60000")
+        {
+            int min_p = 31000;
+            int max_p = 60000;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("minprice", min_p), new SqlParameter("maxprice", max_p) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_price", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        else if (rblPrice.SelectedValue == "61000 to 100000")
+        {
+            int min_p = 61000;
+            int max_p = 100000;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("minprice", min_p), new SqlParameter("maxprice", max_p) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_price", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+    }
+
+
+    protected void rblRating_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (rblRating.SelectedValue == "5 Stars")
+        {
+            int star = 5;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        else if (rblRating.SelectedValue == "4 Stars")
+        {
+            int star = 4;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        else if (rblRating.SelectedValue == "3 Stars")
+        {
+            int star = 3;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+        else if (rblRating.SelectedValue == "2 Stars")
+        {
+            int star = 2;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+
+        else if (rblRating.SelectedValue == "1 Star")
+        {
+            int star = 1;
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("Rating", star) };
+            DataTable dt = dac.GetDataTable("Get_tour_by_rating", param);
+            rptTours.DataSource = dt;
+            rptTours.DataBind();
+        }
+    }
+    protected void rblCategories_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        SqlParameter[] param = new SqlParameter[] { new SqlParameter("Category_id", rblCategories.SelectedValue) };
+        DataTable dt = dac.GetDataTable("Get_tours_by_cat", param);
+        rptTours.DataSource = dt;
+        rptTours.DataBind();
+    }
+}
