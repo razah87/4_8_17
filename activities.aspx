@@ -1,6 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main_Master.master" AutoEventWireup="true" CodeFile="activities.aspx.cs" Inherits="activities" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script>
+        function myFunction() {
+            var x = document.getElementById('fltr');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
       <header  class=" head-banner banner-search-top" runat="server"   id="banheader" role="banner" style="margin-top: 135px;background-repeat: no-repeat;
@@ -64,8 +74,10 @@
   
      <div class="container sub-proper">
          <div class="col-sm-3 sidebar">
-             <h3>Find Your Destination</h3>
-          
+             <a class="filbutton" href="#" onclick="myFunction()"><img width="25px" src="images/thumbnails/tool.png" /> Filters</a>
+             <div class="fltr" id="fltr">
+             <h3>Find Your Trip</h3>
+         
              <div class="left-side-block">
                 <h4>Categories</h4>
               
@@ -100,7 +112,7 @@
                     
                 </asp:RadioButtonList>
                   </div>
-      
+      </div>
            </div>
         <div class="col-sm-9">
            <%-- <p> <label id="lblContent" runat="server" ></label></p>--%>

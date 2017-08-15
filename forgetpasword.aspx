@@ -4,10 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
      <div class="initial-info" style="padding:200px 0;height:500px;">
+         <p><asp:Label ID="lblMessage" runat="server" ></asp:Label></p>
         <p> <asp:Label ID="Label1" runat="server" Text="Email"></asp:Label>
          <asp:TextBox ID="txtFGEmail" width="300px" runat="server"></asp:TextBox></p>
-         <p>  <asp:Label ID="Label2" runat="server" Text="New Password"></asp:Label>
-         <asp:TextBox ID="txtNewpwd" width="300px" runat="server"></asp:TextBox></p>
+        
          <p style="padding:30px;text-align:center;clear:both;"><asp:Button ID="btnFG" runat="server" Width="150px" Text="Submit" OnClick="btnFG_Click" /></p>
      </div>
 </asp:Content>

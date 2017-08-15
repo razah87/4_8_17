@@ -23,7 +23,7 @@ public partial class operator_profile : System.Web.UI.Page
         hllogout.Visible = true;
         hlmc.Visible = true;
         hlrg.Visible = false;
-        if (Session["role"].ToString() != "subscribers") { trallerreviews.Visible = true; }
+       // if (Session["role"].ToString() != "subscribers") { trallerreviews.Visible = true; }
         string u = Session["userid"].ToString();
         GetOperator(u);
     }

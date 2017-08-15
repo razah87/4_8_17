@@ -78,8 +78,8 @@
 				</div>
 				<div class="col-xs-9 text-right menu-1" style="padding-top: 30px;">
 					<ul>
-						<li><a href="honeymoon.aspx">HONEYMOON TOURS</a></li>
-						<li><a href="family-tours.aspx">FAMILY TOURS</a></li>
+						<%--<li><a href="honeymoon.aspx">HONEYMOON TOURS</a></li>
+						<li><a href="family-tours.aspx">FAMILY TOURS</a></li>--%>
 						<li><a href="activities.aspx">ACTIVITIES</a></li>
                         <li><a href="http://naturesurfers.com/blog/">BLOG</a></li>
 						<li><a href="destinations.aspx">DESTINATIONS</a>
@@ -145,7 +145,7 @@ Sign up for newsletter today.</p>
                         
                         <hr />
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 ftr">
                             <h4>COMPANY</h4>
                             <ul><li><a href="#">About Us</a> </li>
                                 <li><a href="Account/operator-prof.aspx">Suppliers</a>
@@ -155,7 +155,7 @@ Sign up for newsletter today.</p>
 
 
                         </div>
-                         <div class="col-lg-4">
+                         <div class="col-lg-4 ftr">
                              <h4>SUPPORT</h4>
                              <ul><li><a href="#">Contact Us</a> </li>
                                  <li><a href="#">Destinations</a></li>
@@ -165,12 +165,12 @@ Sign up for newsletter today.</p>
 
 
                          </div>
-                         <div class="col-lg-4">
+                         <div class="col-lg-4 ftr">
                              <h4>Follow Us</h4>
-                               <ul style="margin-top:20px;"><li style="float:left;padding-right: 5px;"><a href="https://www.facebook.com/naturesurfers/"><img src="images/facebook.png" width="40px" /></a> </li>
-                                 <li style="float:left;padding-right: 5px;"><a href="#"><img src="images/twitter.png" width="40px" /></a></li>
-                                   <li style="float:left;padding-right: 5px;"><a href="#"><img src="images/instagram.png" width="40px" /></a></li>
-                                   <li style="float:left;"><a href="#"><img src="images/google-plus.png" width="40px" /></a></li>
+                               <ul class="ftrfollow" style="margin-top:13px;"><li style="float:left;padding-right: 5px;"><a href="https://www.facebook.com/naturesurfers/"><img src="images/facebook.png"  /></a> </li>
+                                 <li style="float:left;padding-right: 5px;"><a href="#"><img src="images/twitter.png"  /></a></li>
+                                   <li style="float:left;padding-right: 5px;"><a href="#"><img src="images/instagram.png"  /></a></li>
+                                   <li style="float:left;"><a href="#"><img src="images/google-plus.png"  /></a></li>
                              </ul>
 
                          </div>

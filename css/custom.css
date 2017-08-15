@@ -3,6 +3,9 @@
 
 /* Popup */
 
+.customquots p {
+margin-bottom:0px!important;
+}
 .modalPopup{
     background:#fff;
     border:2px solid #40c1b9;
@@ -14,7 +17,7 @@ background:#40c1b9;
 margin-top: -33px;
 margin-left: -16px;
 color:#fff!important;
-padding:16%;
+padding:19%;
 }
 .req-from-cont_bottom {
     padding-top: 18%;
@@ -108,8 +111,11 @@ clear:both;
 .nstitleimage{
     width:38.4%;
     float:left;
-    
+   
 }
+    .nstitleimage img {
+         height:259px;
+    }
 .single_tour_inner{background-color:rgb(204, 204, 204);min-height:340px;}
 
 .nsbuttonconatiner {
@@ -506,7 +512,7 @@ font-size:20px;
 
    
 }
-.right-sidebar{float:left;padding:5px 10px;background-color:#40c1b9;min-height:450px!important;}
+.right-sidebar{float:left;padding:5px 10px;background-color:#40c1b9;min-height:360px!important;}
 .fh5co-nav .container{width:73%!important;}
 .outerwrap
 {width:80%;
@@ -579,9 +585,94 @@ margin:auto;
     padding: 5px 53px;
     width: 100%;
 }
+
+.operator-img,.operator-con, .filbutton {
+    display:none;
+    }
+ .ftrfollow li img{width:40px;}
+ .userprof .lft{margin:20px 0; border-right:1px solid gray;}
 /******************Destination*******************/
 
 @media (max-width: 767px) {
+    .userprof .lft{border:none;}
+    .content-title h2 span {
+    color: #fff;
+    font-size: 12px!important;
+    font-weight: normal!important;
+}
+    .fh5co-nav .menu-1 {
+    display: block!important;
+    padding-top:10px!important;
+}
+    .fh5co-nav ul li a {
+    padding:14px 5px!important;
+    }
+    .menu-1,.fh5co-nav .container {width:100%!important;  }
+    .left_date {
+    float:left;
+}
+    .sidebar_departure_booknow input{padding:5px 14px!important;}
+    .t-content {
+    height:214px;}
+    .right-sidebar{width:100%;text-align:center;margin-bottom:30px;}
+    .related-tour{margin-bottom:20px;}
+    .pre-title{
+    width: 100%;
+    float: left;
+    text-align: center;
+    }
+    .after-title{
+        padding: 6px 5px!important;
+    background-color: #40c1b9;
+    color: #fff!important;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    }
+    .single_tour_cont{clear:both;}
+    .sidebar_departure_date,.days-tabs ul {
+    display:none;
+    }
+    .col-sm-8 {
+     padding-left:0!important;padding-right:0!important;
+    }
+    .sidebar h3 {
+    border-radius: 1px 1px 1px 1px!important;
+    background: #40c1b9;
+    color: #fff;
+    margin: 0 0px!important;
+    padding: 8px!important;
+}
+ .col-sm-8, .for-tour-page{width:100%!important;}
+.ftr{float:left;width:33.33%;}
+.ftrfollow li{float:left;width:50%;padding:1px;}
+ .ftrfollow li img{width:36px!important;}
+
+    .sidebar{padding:10px!important;text-align:center;}
+    .filbutton {
+    display:block!important;
+    background: #EF3E36;
+    color: #fff!important;
+    margin-bottom: 10px;
+    padding: 5px;
+    }
+    .fltr {
+    display:none;
+    }
+    .col-sm-9 {
+    padding-left:0!important;padding-right:0!important;
+    }
+   .nstourdescrition, .nstitleimage {
+    width:100%!important;
+    }
+    .title {width:70%!important;}
+    .daysnights{width:30%!important;padding: 3px 7px;border-radius: 0px 0px 0px 5px!important; }
+    .nstourshotel{min-height:100px!important;}
+    .nsbuttonconatiner {
+    padding-bottom:12px;
+    }
+    .nsbuttonconatiner input{margin-bottom:20px;}
+
    .img-caption,.destinatin-cont .col-sm-3-f, .col-sm-3-f {
         width: 100% !important;
     }
@@ -679,10 +770,11 @@ background-repeat:no-repeat;*/
 .left_date {
     background: #EE4037;
     color: #fff;
-    width: 258px;
+    width: 270px;
     margin: 20px auto;
-    padding: 5px 28px;
-
+    padding: 5px 20px;
+    text-align:center;
+    
 }
 .left_date span {color:#fff;
 }

@@ -34,7 +34,7 @@
         <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
         <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox>
         <asp:Button ID="btnLogin" runat="server" CssClass="btn-subs" Text="Sign In" Style="margin-top:30px;" OnClick="btnLogin_Click" />
-        <a ID="hlForgetpassword" href="../getnewpassword.aspx">Lost Your Password?</a>
+        <a ID="hlForgetpassword" href="forgetpasword.aspx">Lost Your Password?</a>
     </div>
     <div class="col-sm-6" style="border-left:1px solid gray;">
         <h2>Sign Up</h2>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main_Master.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
- 
      <script src="Scripts/slider/jssor.slider-22.2.10.min.js"></script>
     <script type="text/javascript">
         jssor_1_slider_init = function () {
@@ -24,6 +24,7 @@
                 }
             };
 
+
             var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
 
@@ -44,6 +45,7 @@
             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             /*responsive code end*/
+
         };
     </script>
      <script type="text/javascript">
@@ -53,7 +55,7 @@
                  $AutoPlay: true,
                  $AutoPlaySteps: 4,
                  $SlideDuration: 160,
-                 $SlideWidth: 275,
+                 $SlideWidth: 346,
                  $SlideSpacing: 4,
                  $Cols: 4,
                  $ArrowNavigatorOptions: {
@@ -296,49 +298,34 @@
     </section>
     <section> <div class="container">
 			<div class="row">
+                
                 <div class="heading">
                 <h1>Best Holiday Experiences For You In Pakistan</h1>
                   Unlimited Choices. Trusted Agents. Best Prices. Happy Memories.
                 </div>
-                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:350px;overflow:hidden;visibility:hidden;">
+                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;height:350px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" class="ns_hom_slides" style="height:350px">
-            <div  class="sld">
-             <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                  <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
+        
+                    
 
-            </div>
-            
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-
+        <div data-u="slides" class="ns_hom_slides" style="height:280px">
+        <%= slider_return() %>   
+       
+          
            
         </div>
+           
         <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
+    <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
            
             <div data-u="prototype" style="width:21px;height:21px;">
                 <div data-u="numbertemplate"></div>
             </div>
-        </div>
+        </div> 
         <!-- Arrow Navigator -->
         <span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
         <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
@@ -357,124 +344,34 @@
                 <h1>Top Destinations In Pakistan</h1>
 
 			</div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div>
-                    
-                </div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-
-			</div>
-
-        </div></section>
-    <section> <div class="container">
-			<div class="row">
-                <div class="heading">
-                <h1>Best International Holiday Tours</h1></div>
-                     <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:1110px;height:350px;overflow:hidden;visibility:hidden;">
-        <!-- Loading Screen -->
-        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
-            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-        </div>
-        <div data-u="slides" class="ns_hom_slides" style="height:280px">
-            <div  class="sld">
-             <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                  <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-
-            </div>
             
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
+                    <%=  top_destination()  %> 
+                
 
-           
-        </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
-           
-            <div data-u="prototype" style="width:21px;height:21px;">
-                <div data-u="numbertemplate"></div>
-            </div>
-        </div>
-        <!-- Arrow Navigator -->
-        <span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
-    </div><script type="text/javascript">jssor_2_slider_init();</script>
-			</div>
-
-        </div></section>
-    <section> <div class="container destinatin-cont">
-			<div class="row">
-                <div class="heading">
-                <h1>Top International Destination</h1>
-
-			</div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div>
-                    
+   
                 </div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"><div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
-                <div class="col-sm-3-f"> <div class="des-thumbnail"> <img src="images/thumbnails/placeholder.jpg" width="100%" /></div><div class="img-caption"><h3>Murree</h3></div></div>
+                     
+
+
 
 			</div>
-
-        </div></section>
+</section>
+    
+    
     <section> <div class="container">
 			<div class="row">
                 <div class="heading">
                 <h1>Tour Activities</h1>
                     </div>
-                 <div id="jssor_3" style="position:relative;margin:0 auto;top:0px;left:0px;width:1110px;height:350px;overflow:hidden;visibility:hidden;">
+                 <div id="jssor_3" style="position:relative;margin:0px auto;top:0px;left:0px;height:350px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
+                       
         <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" class="ns_hom_slides" style="height:280px">
-            <div  class="sld">
-             <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                  <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-
-            </div>
-            
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-                <a href="#"><img src="images/thumbnails/placeholder.jpg" /></a>
-                 <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
-            <div class="sld">
-               <img src="images/thumbnails/placeholder.jpg" />
-                <div class="event-title">  <span class="ns_title"><a href="#">Title</a></span><span class="price">PKR 20000</span></div>
-            </div>
+             <%= slider_return() %>
 
            
         </div>

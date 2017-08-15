@@ -14,9 +14,8 @@ using System.Text;
 
 public partial class _Default : System.Web.UI.Page
 {
-  public IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
+    public IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     protected void Page_Load(object sender, EventArgs e)
-
     {
         if (!Page.IsPostBack)
         {
@@ -37,35 +36,35 @@ public partial class _Default : System.Web.UI.Page
 
             ///Getalldestination
             ///
-           /* DataTable dt = GetTopDestination();
+            /* DataTable dt = GetTopDestination();
 
-            if (dt.Rows.Count > 0) {
-                DataTable dt_new = new DataTable();
-                DataColumn dc_image = new DataColumn("ImageUrl");
-                dt_new.Columns.Add(dc_image);
-                DataColumn dc_title = new DataColumn("title");
+             if (dt.Rows.Count > 0) {
+                 DataTable dt_new = new DataTable();
+                 DataColumn dc_image = new DataColumn("ImageUrl");
+                 dt_new.Columns.Add(dc_image);
+                 DataColumn dc_title = new DataColumn("title");
 
-                dt_new.Columns.Add(dc_title);
-                for (int i = 0; i < dt.Rows.Count; i++) {
-                  //  image_top.ImageUrl = dt.Rows[i]["Profile_Image"].ToString();
+                 dt_new.Columns.Add(dc_title);
+                 for (int i = 0; i < dt.Rows.Count; i++) {
+                   //  image_top.ImageUrl = dt.Rows[i]["Profile_Image"].ToString();
 
-                    DataRow dr = dt_new.NewRow();
-                    dr[0] = dt.Rows[i]["Profile_Image"].ToString();
-                    dr[1] = dt.Rows[i]["ds_Name"].ToString();
-            // you change your code as per need .
-                    dt_new.Rows.Add(dr);
+                     DataRow dr = dt_new.NewRow();
+                     dr[0] = dt.Rows[i]["Profile_Image"].ToString();
+                     dr[1] = dt.Rows[i]["ds_Name"].ToString();
+             // you change your code as per need .
+                     dt_new.Rows.Add(dr);
                 
-                }
-                dtlist.DataSource = dt_new;
-                dtlisttop.DataSource = dt_new;
-                dtlist.DataBind();
-                dtlisttop.DataBind();
+                 }
+                 dtlist.DataSource = dt_new;
+                 dtlisttop.DataSource = dt_new;
+                 dtlist.DataBind();
+                 dtlisttop.DataBind();
             
-            }
-            */
+             }
+             */
             ////////// Get All Event ////
-           // DataTable dt_event = GetAllTour();
-         //   slider_return(dt_event);
+            // DataTable dt_event = GetAllTour();
+            //   slider_return(dt_event);
             /*
             DataTable dt_event = GetAllTour();
 
@@ -101,25 +100,28 @@ public partial class _Default : System.Web.UI.Page
             ////
 
 
-           // Getalltours();
-           
+            // Getalltours();
+
         }
         SearchCustomers(txtContactsSearch.Text);
     }
-    public String top_destination() {
-         DataTable dt = GetTopDestination(); 
-         StringBuilder html = new StringBuilder();
-         for (int i = 0; i < dt.Rows.Count; i++)
-         {
-             html.Append("<div class='col-sm-3-f' style='padding-bottom:10px'><div class='des-thumbnail'> <img src='");
-             html.Append(dt.Rows[i]["Profile_Image"].ToString());
-             html.Append("' width='100%' height='274px'  /></div><div class='img-caption'><a href='");
-             html.Append("destination.aspx?id=");
-             html.Append(dt.Rows[i]["Id"].ToString());
-             html.Append("'><h3 class='text-center'>");
-             html.Append(dt.Rows[i]["ds_Name"].ToString());
-             html.Append("</h3></a></div></div>");
-         }
+    public String top_destination()
+    {
+        DataTable dt = GetTopDestination();
+        StringBuilder html = new StringBuilder();
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            html.Append("<div class='col-sm-3-f' style='padding-bottom:10px'><a href='");
+            html.Append("destination.aspx?id=");
+            html.Append(dt.Rows[i]["Id"].ToString());
+            html.Append("'>");
+            html.Append("<div class='des-thumbnail'><img src='");
+            html.Append(dt.Rows[i]["Profile_Image"].ToString());
+            html.Append("' width='100%' height='274px'  /></div><div class='img-caption'>");
+            html.Append("<h3 class='text-center'>");
+            html.Append(dt.Rows[i]["ds_Name"].ToString());
+            html.Append("</h3></a></div></div>");
+        }
         return html.ToString();
     }
     public String slider_return()
@@ -132,7 +134,7 @@ public partial class _Default : System.Web.UI.Page
             html.Append("<a href='");
             html.Append("tour.aspx?id=" + dt_event.Rows[i]["Id"].ToString() + "&cat_id=" + dt_event.Rows[i]["Category_id"].ToString() + "&op_id=" + dt_event.Rows[i]["o_id"].ToString());
             html.Append("'><img src='");
-            
+
             html.Append(dt_event.Rows[i]["Feature_image"].ToString());
             html.Append("' width='400px !important'/></a>");
             html.Append("<div class='event-title'>");
@@ -165,7 +167,7 @@ public partial class _Default : System.Web.UI.Page
         string du = ddlDuration.SelectedItem.ToString();
         string ty = ddlType.SelectedItem.ToString();
 
-           var queryParams = new NameValueCollection()
+        var queryParams = new NameValueCollection()
         {
            
             { "des", des.Trim() },
@@ -174,7 +176,7 @@ public partial class _Default : System.Web.UI.Page
             { "type", ty.Trim() }
         };
 
-           string url = "Searchresult.aspx" + ToQueryString(queryParams);
+        string url = "Searchresult.aspx" + ToQueryString(queryParams);
 
         Response.Redirect(url);
     }
@@ -203,7 +205,7 @@ public partial class _Default : System.Web.UI.Page
     }
     public DataTable GetAllTour()
     {
-        DataTable dt = dac.GetDataTable("Get_alltours");
+        DataTable dt = dac.GetDataTable("Get_All_Tour");
         return dt;
     }
     //public List<string> Searchautocomp(string TextBox1)
@@ -211,28 +213,28 @@ public partial class _Default : System.Web.UI.Page
 
     //    SqlParameter[] param = new SqlParameter[] { new SqlParameter("@ds_Name", TextBox1) };
 
-      
+
     //    List<string> destinations = new List<string>();
     //    IDataReader objReader = dac.ExecuteDataReader("Select_Destination_auto", param);
-        
+
     //        while (objReader.Read())
     //        {
     //            destinations.Add(objReader["ds_Name"].ToString());
     //        }
 
-        
+
     //    for (int i = 0; i < destinations.Count; i++)
     //    {
     //        cbo.Items.Add(destinations[i].ToString());
     //    }
     //    return destinations;
     //}
-    public  DataTable GetDestination()
+    public DataTable GetDestination()
     {
 
         DataTable dt = dac.GetDataTable("Select_Destination");
         return dt;
-                   
+
     }
     public DataTable GetTopDestination()
     {
@@ -298,8 +300,8 @@ public partial class _Default : System.Web.UI.Page
     public string Get_destinationkeybyname(string dest)
     {
         SqlParameter[] param = new SqlParameter[] { new SqlParameter("ds_Name", dest) };
-        IDataReader idr = dac.ExecuteDataReader("Get_destination_id",param);
-       string desid="";
+        IDataReader idr = dac.ExecuteDataReader("Get_destination_id", param);
+        string desid = "";
         if (idr.Read())
         {
             desid = idr[0].ToString();
@@ -307,7 +309,7 @@ public partial class _Default : System.Web.UI.Page
 
         Session["destination_id"] = desid;
         return desid;
-     
+
     }
 
     public DataTable GetToursbycategory(string cat)
@@ -325,7 +327,7 @@ public partial class _Default : System.Web.UI.Page
     public void Getalltours()
     {
         //DataTable dt = dac.GetDataTable("Get_alltours");
-        
+
         //if (dt.Rows.Count > 0)
         //{
         //    foreach (DataRow dr in dt.Rows)
@@ -337,7 +339,7 @@ public partial class _Default : System.Web.UI.Page
 
         //    }
 
-           
+
 
         //IDataReader idr = dac.ExecuteDataReader("Get_alltours");
         //if (idr.Read())
@@ -352,11 +354,11 @@ public partial class _Default : System.Web.UI.Page
         //            lblTourprice.Text = idr["Price"].ToString();
         //        }
         //    }
-       // return dt;
-       // }
-        }
+        // return dt;
+        // }
+    }
 
-    
 
-   
+
+
 }

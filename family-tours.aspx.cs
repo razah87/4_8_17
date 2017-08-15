@@ -16,7 +16,7 @@ public partial class family_tours : System.Web.UI.Page
     private IDACManager dac = DACManagerFactory.GetDACManager(ConfigurationManager.ConnectionStrings["DataConnectionString"].ConnectionString, DACManagers.SqlServerDACManager);
     protected void Page_Load(object sender, EventArgs e)
     {
-        string cat_id = "4";
+        string cat_id = "5";
         GetDestinationbyid(Convert.ToInt32(cat_id));
         SearchCustomers(txtContactsSearch2.Text);
         rptTours.DataSource = Gettoursbycategory(cat_id);
